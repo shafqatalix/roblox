@@ -1,0 +1,25 @@
+-- ==============================
+-- Kid-Friendly Roblox Script
+-- ==============================
+-- This script makes a part spin around like a toy!
+-- It's easy to read and fun for 8-year-olds.
+
+-- Step 1: Wait until the game is ready
+game.Loaded:Wait()
+
+-- Step 2: Create a new part in the game workspace
+local part = Instance.new("Part")
+part.Name = "Spinning Toy"
+part.Size = Vector3.new(5, 5, 5) -- Make it 5 studs big
+part.Position = Vector3.new(0, 10, 0) -- Start up in the air
+part.Anchored = true -- So it doesn't fall down
+part.Color = Color3.new(1, 0, 0) -- Bright red color
+part.Parent = game.Workspace -- Put it in the game world
+
+-- Step 3: Make the part spin forever
+while true do
+	-- Rotate the part a little bit on the Y axis
+	part.CFrame = part.CFrame * CFrame.Angles(0, math.rad(10), 0)
+	-- Wait a tiny moment so the computer can keep up
+	wait(0.05)
+end
